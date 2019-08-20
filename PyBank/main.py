@@ -29,28 +29,16 @@ with open(csvpath, newline="") as csvfile:
    
 # The net total amount of "Profit/Losses" over the entire time
     next(csvreader)
+    PnL = []
     for row in csvreader:
-        PnL = [row[1]]
-        x = sum(PnL) 
-        print("Total:  " + int(x))
+        PnL.append(row[1])
+        print(PnL)
 
-        
-
-    # make placeholder
-    #store all the values in a list 
-    
-    
-               
-
-    #for row in csvreader:
-        #Date = [row[0]]
-        
-
-
-    #sum all the numbers and print
-    
-
-
+# make placeholder
+#store all the values in a list 
+#for row in csvreader:
+#Date = [row[0]]
+#sum all the numbers and print
 # The average of the changes in "Profit/Losses" over the entire period
 # The greatest increase in profits (date and amount) over the entire period
 # The greatest decrease in losses (date and amount) over the entire period
