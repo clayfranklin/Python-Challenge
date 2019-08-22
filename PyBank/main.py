@@ -39,6 +39,7 @@ print(f"Total : {(str(sum(x)))}")
     
 # The average of the changes in "Profit/Losses" over the entire period
 
+
 with open(csvpath, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     next(csvreader)
@@ -46,7 +47,16 @@ with open(csvpath, newline="") as csvfile:
     for row in csvreader:
         diff.append(int(row[1]))
         x = diff
-print((x[1] - x[0]) + (x[2] - x[1]))
+        
+    differences = []
+    for i in range(1,len(x)):
+        difference_results = x[i] - x[i-1]
+        differences.append(difference_results)
+print(differences)
+
+
+
+
 
 
 
@@ -69,4 +79,6 @@ print((x[1] - x[0]) + (x[2] - x[1]))
 
   
 # The greatest increase in profits (date and amount) over the entire period
+
+
 # The greatest decrease in losses (date and amount) over the entire period
