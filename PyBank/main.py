@@ -1,5 +1,5 @@
-import os
 import csv
+import os
 
 csvpath = os.path.join("..", "PyBank", "budget_data.csv")
 #def PnL_Total(stuff):
@@ -24,21 +24,49 @@ with open(csvpath, newline="") as csvfile:
     #    total += int(row[1])
     #print (total)    
     
-    #row_count = sum(1 for row in csvreader) 
-    #print ("Total Months: " + str(row_count - 1))   
+    row_count = sum(1 for row in csvreader) 
+    print ("Total Months: " + str(row_count - 1))   
    
 # The net total amount of "Profit/Losses" over the entire time
+with open(csvpath, newline="") as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
     next(csvreader)
     PnL = []
     for row in csvreader:
-        PnL.append(row[1])
-        print(PnL)
-
-# make placeholder
-#store all the values in a list 
-#for row in csvreader:
-#Date = [row[0]]
-#sum all the numbers and print
+        PnL.append(int(row[1]))
+        x = PnL
+print(f"Total : {(str(sum(x)))}")
+    
 # The average of the changes in "Profit/Losses" over the entire period
+
+with open(csvpath, newline="") as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
+    next(csvreader)
+    diff = []
+    for row in csvreader:
+        diff.append(int(row[1]))
+        x = diff
+print((x[1] - x[0]) + (x[2] - x[1]))
+
+
+
+        
+
+    # Python program to get average of a list 
+    #next(csvreader)
+    #Aver = []
+    #for row in csvreader:
+    #    Aver.append(int(row[1]))
+    #    y = Aver
+#print(f"Total Changes : {round(sum(y) / len(y))}")
+
+
+# Driver Code 
+
+
+# Printing average of the list 
+
+
+  
 # The greatest increase in profits (date and amount) over the entire period
 # The greatest decrease in losses (date and amount) over the entire period
