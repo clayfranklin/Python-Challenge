@@ -14,13 +14,13 @@ total = 0
 winner = 0
 percentage = 0
 
-print("Election Results")
+print("    Election Results")
 
 with open(csvpath, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     header = next(csvreader)
         
-    print("-------------------------")
+    print("  -------------------------")
     for row in csvreader:
         total += 1
 print("Total Votes: " + (str(total)))
@@ -35,18 +35,26 @@ with open(csvpath, newline="") as csvfile:
         Candidates.append(Candidate_Name)
     Candidate_Dict = dict(Counter(Candidates))
 
-Khan_percent =Candidate_Dict["Khan"]*100/total
+Khan_percent = Candidate_Dict["Khan"]*100/total
 Khan_percent = round(Khan_percent)
-K_dogPercent = str(Khan_percent)
+
 Correy_percent = Candidate_Dict["Correy"]*100/total
+Correy_percent = round(Correy_percent)
+
 Li_percent =Candidate_Dict["Li"]*100/total
+Li_percent = round(Li_percent)
+
 Otooly_percent = Candidate_Dict["O'Tooley"]*100/total
+Otooly_percent = round(Otooly_percent)
 
 #print("Khan : " + str(Khan_percent) + "%", 
 #for i in Candidate_Dict: 
     #print(i, Candidate_Dict[i])
 
-print("Khan : " , K_dogPercent , str(Candidate_Dict["Khan"]))
+print("Khan: " , str(Khan_percent) + "%" , str(Candidate_Dict["Khan"]))
+print("Correy: " , str(Correy_percent) + "%" , str(Candidate_Dict["Correy"]))
+print("Li: " , str(Li_percent) + "%" , str(Candidate_Dict["Li"]))
+print("O'Tooly: " , str(Otooly_percent) + "%" , str(Candidate_Dict["O'Tooley"]))
 print("-------------------------")
 
 
