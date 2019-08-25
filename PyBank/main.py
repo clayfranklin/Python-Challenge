@@ -29,7 +29,7 @@ with open(csvpath, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     next(csvreader)
     diff = []
-    date = []
+    
     for row in csvreader:
         diff.append(int(row[1]))
         x = diff
@@ -39,25 +39,18 @@ with open(csvpath, newline="") as csvfile:
     for i in range(1,len(x)):
         difference_results = x[i] - x[i-1]
         differences.append(difference_results)
-# bart that shit up into a single number to average
-        barf = (str(sum(differences)))
-# print that barfy stew's average
-
-
+#  single number to average
+        diff_total = (str(sum(differences)))
   
 # The greatest increase in profits (date and amount) over the entire period
 
 # loop through the list and return the highest value
-        high = (max(differences))
-        low = (min(differences))
+    high = (max(differences))
+    low = (min(differences))
 
-print("Average Change: " + str(round(int(barf)/85)))
-print(high)
-print(low)
+print("Average Change: " + str(round(int(diff_total)/85)))
+
+print("Highest Increase: " + str(high))
+print("Highest Decrease: " + str(low))
            
-# find the index of that value
-print(differences.index(high))
 
-# print the index of column [0] with the result from column [1], 
-
-# The greatest decrease in losses (date and amount) over the entire period
