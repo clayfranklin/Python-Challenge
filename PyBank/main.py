@@ -6,11 +6,15 @@ csvpath = os.path.join("..", "PyBank", "budget_data.csv")
 # Open and read csv
 with open(csvpath, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
-    
+    total = 0
+
  # The total number of months included in the dataset     
-    
-    row_count = sum(1 for row in csvreader) 
-    print ("Total Months: " + str(row_count - 1))   
+    next(csvreader)
+    for row in csvreader:
+        total += 1
+    print ("Total Months: " + str(total)) 
+# total amount of rows to average differences (so one less row than row count)
+       
    
 # The net total amount of "Profit/Losses" over the entire time
 with open(csvpath, newline="") as csvfile:
@@ -36,11 +40,15 @@ with open(csvpath, newline="") as csvfile:
         
 # create a new list with the differences over each increment
     differences = []
+    
     for i in range(1,len(x)):
         difference_results = x[i] - x[i-1]
         differences.append(difference_results)
 #  single number to average
         diff_total = (str(sum(differences)))
+# average the differences
+        diff_average = int(diff_total)/total
+
   
 # The greatest increase in profits (date and amount) over the entire period
 
@@ -48,7 +56,7 @@ with open(csvpath, newline="") as csvfile:
     high = (max(differences))
     low = (min(differences))
 
-print("Average Change: " + str(round(int(diff_total)/85)))
+print("Average Change: " + str(diff_average))
 
 print("Highest Increase: " + str(high))
 print("Highest Decrease: " + str(low))

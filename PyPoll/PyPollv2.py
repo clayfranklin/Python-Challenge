@@ -14,7 +14,6 @@ Candidate_votes = {}
 total = 0
 winner = 0
 
-
 print("    Election Results")
 
 # Loop through with foreach loop to find total votes cast
@@ -64,17 +63,11 @@ print("Li: " , str(Li_percent) + "%" , str(Candidate_Dict["Li"]))
 print("O'Tooly: " , str(Otooly_percent) + "%" , str(Candidate_Dict["O'Tooley"]))
 print("-------------------------")
 
-
 winner = max(Candidate_Dict, key=Candidate_Dict.get)
 print("Winner : " + winner)
 
-
-
-
-
 #Winner: Khan
 print("-------------------------")
-
 
 #print analysis to txt.  I don't know how to do this
 #and I think it's becuase I'm doing too many things to my 
@@ -91,7 +84,6 @@ print("-------------------------")
     #printf"O'Tooly: " , str(Otooly_percent) + "%" , str(Candidate_Dict["O'Tooley"])
     #printf"-------------------------"
     #printf"Winner : " + winner)
-
 
 #export as txt file
 #with open(file_to_output, "a") as txt_file:
